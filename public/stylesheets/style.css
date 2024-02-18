@@ -39,9 +39,9 @@ a {
   text-align: center;
   color: #faad3f;
   text-decoration: none;
-  padding-left: 2.5%;
+  padding: 2.5%;
   font-family: 'Love Ya Like A Sister';
-  font-size: 18px;
+  font-size: clamp(13px, 1.5vw, 2vw);
 }
 
 a:hover {
@@ -49,16 +49,17 @@ a:hover {
 }
 
 h1 {
-  padding: 10px 20px 10px 20px;
-  font-size: 350%;
+  padding: 1vh 2vw 1vh 2vw;
+  font-size: clamp(28px, 4.5vw, 5vw);
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
+/* unused, replaced with .page-msg */
 h2 {
   color: #00082f;
   text-align: center;
   color: 3695c1;
-  font-size: 250%;
+  font-size: 3vw;
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
@@ -87,6 +88,7 @@ Header Styling
 }
 
 .main-header {
+  height: clamp(15px, 10vw, 10vw);
   display: grid;
   grid-template-columns: 4fr 8fr 4fr;
 }
@@ -94,13 +96,13 @@ Header Styling
 .main-h1 {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #logo {
-  height: 25vh;
-  max-height: 250px;
-  border: 5px solid #faad3f;
-  border-radius: 10%;
+  height: 15vw;
+  border: 0.5vw solid #faad3f;
+  border-radius: 30%;
 }
 
 #logo-container {
@@ -117,6 +119,7 @@ Header Styling
 
 #artand {
   color: #faad3f;
+  position: absolute;
 }
 
 /*
@@ -158,26 +161,27 @@ Shared Styles
 .box {
   border: 2px solid #000;
   padding: 0vh 20vh 7vh 20vh;
-  width: 55%;
+  width: auto;
   margin: auto;
   margin-top: 10vh;
   margin-bottom: 1%;
   border-radius: 10%;
 }
 
-/* rename to .page-msg */
-#welcome-msg {
-  margin: auto 15% auto 15%;
-  font-family: 'Love Ya Like A Sister';
-  color: #00082f;
-  font-size: 150%;
-}
-
-/* rename to box-text */
-.test-text {
+.box-text {
   font-family: 'Love Ya Like A Sister';
   color: #fff;
   font-size: 150%;
+}
+
+/* rename to .page-msg */
+.page-msg {
+  margin: auto 15% auto 15%;
+  font-family: 'Love Ya Like A Sister';
+  color: #00082f;
+  font-size: clamp(150%, 2.5vw, 3vw);
+  text-align: center;
+  padding-top: 1vh;
 }
 
 /*
@@ -186,7 +190,7 @@ Index Styling
 
 #box-grid {
   display: grid;
-  grid-template-columns:  1fr 2fr 1fr 2fr 1fr;
+  grid-template-columns:  1fr 1fr;
   margin-bottom: 10vh;
 }
 
@@ -215,7 +219,6 @@ Index Styling
   border: none;
 }
 
-
 /*
 Camps Styling
 */
@@ -236,7 +239,12 @@ Camps Styling
 }
 
 #box3 {
-  background-image: linear-gradient(90deg, hsl(132, 82%, 56%), hsl(132, 82%, 76%));
+  background-image: linear-gradient(90deg, hsl(117, 82%, 60%), hsl(117, 82%, 70%));
+  border: none;
+}
+
+#box4 {
+  background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
   border: none;
   margin-bottom: 10vh;
 }
@@ -244,6 +252,7 @@ Camps Styling
 /*
 About us Styling
 */
+/* ask everybody about colors */
 
 /*
 Policy Styling
