@@ -15,6 +15,6 @@ router.get('/about', mainController.about);
 
 router.get('/camps', mainController.camps);
 
-router.get('/policy', mainController.policy);
+router.get('/faqs', mainController.faqs);
 
 module.exports = router;
