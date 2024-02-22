@@ -9,7 +9,7 @@ html {
 
 header {
   border: 2px solid #000d4e;
-  border-bottom: 0.5vw solid #faad3f;
+  border-bottom: clamp(2px, 0.25vw, 0.25vw) solid #faad3f;
   background-color: #000d4e;
   background-image: linear-gradient(90deg, hsl(230, 100%, 15%),/* hsl(230, 100%, 20%) */ hsl(229, 37%, 25%));
   line-height: 20px;
@@ -18,7 +18,7 @@ header {
 
 footer{
   padding-top: 1vw;
-  border-top: 7.5px solid #faad3f;
+  border-top: clamp(2px, 0.25vw, 0.25vw) solid #faad3f;
   background-color: #faad3f;
   background-image: linear-gradient(90deg, hsl(230, 100%, 15%),/* hsl(230, 100%, 20%) */ hsl(229, 37%, 25%));
   /*
@@ -92,7 +92,7 @@ Header Styling
 
 .navs {
   text-align: center;
-  color: #faad3f;
+  color: #fff;
   text-decoration: none;
   padding: 2.5%;
   font-family: 'Love Ya Like A Sister';
@@ -100,7 +100,7 @@ Header Styling
 }
 
 .navs:hover {
-  color: #fff;
+  color: #faad3f;
 }
 
 #main-info-container {
@@ -157,7 +157,7 @@ Header Styling
 
 #logo {
   height: 15vw;
-  border: 0.5vw solid #faad3f;
+  border: clamp(2px, 0.25vw, 0.25vw) solid #faad3f;
   border-radius: 30%;
 }
 
@@ -174,7 +174,7 @@ Header Styling
 }
 
 #artand {
-  color: #faad3f;
+  color: #fff;
   position: absolute;
   padding: 1vh 2vw 1vh 2vw;
   font-size: clamp(28px, 4.5vw, 5vw);
@@ -227,7 +227,7 @@ Shared Styles
 */
 
 .box {
-  border: 2px solid #000;
+  border: clamp(2px, 0.25vw, 0.25vw) solid #feca80;
   padding: 0vh 20vh 7vh 20vh;
   width: auto;
   margin: clamp(10px, 2vw, 2vw);
@@ -267,25 +267,25 @@ Index Styling
 #camp1 {
   padding-bottom: 10vh;
   background-image: linear-gradient(90deg, hsl(276, 84%, 56%), hsl(276, 84%, 76%));
-  border: none;
+  /*border: none;*/
 }
 
 #camp2 {
   padding-bottom: 10vh;
   background-image: linear-gradient(90deg, hsl(346, 84%, 66%), hsl(346, 84%, 56%));
-  border: none;
+  /*border: none;*/
 }
 
 #camp3 {
   padding-bottom: 10vh;
   background-image: linear-gradient(90deg, hsl(117, 82%, 60%), hsl(117, 82%, 70%));
-  border: none;
+  /*border: none;*/
 }
 
 #camp4 {
   padding-bottom: 10vh;
   background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
-  border: none;
+  /*border: none;*/
 }
 
 /*
@@ -324,7 +324,42 @@ About us Styling
 /* ask everybody about colors */
 
 /*
-Policy Styling
+FAQ/policy Styling
 */
+
+/*
+.about-content-box {
+  display: flex;
+  justify-content: center;
+}
+*/
+
+#angela-box {
+  padding-bottom: 30vh;
+  background-image: linear-gradient(90deg, hsl(276, 84%, 56%), hsl(276, 84%, 76%));
+  border: none;
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 4vh;
+  margin-top: 4vh;
+}
+
+#dj-box {
+  padding-bottom: 30vh;
+  background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
+  border: none;
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 4vh;
+}
+
+#brad-box {
+  padding-bottom: 30vh;
+  background-image: linear-gradient(90deg, hsl(346, 84%, 66%), hsl(346, 84%, 56%));
+  border: none;
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 4vh;
+}
 
 /* WIP: camp, checkout, agreement, register */

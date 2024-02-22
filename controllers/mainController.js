@@ -13,3 +13,7 @@ exports.camps = (req, res) => {
 exports.faqs = (req, res) => {
     res.render('FAQs', {title: 'Artand'});
 }
+
+exports.directions = (req, res) => {
+    res.redirect('http://www.google.com');
+}

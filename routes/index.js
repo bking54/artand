@@ -17,4 +17,6 @@ router.get('/camps', mainController.camps);
 
 router.get('/faqs', mainController.faqs);
 
+router.get('/directions', mainController.directions);
+
 module.exports = router;
