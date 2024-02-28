@@ -100,7 +100,7 @@ Header Styling
 }
 
 .navs:hover {
-  color: #faad3f;
+  color: hsl(35, 95%, 61%);
 }
 
 #main-info-container {
@@ -140,7 +140,7 @@ Header Styling
   /* background-image: linear-gradient(90deg, #141e51, #353b56); */
   background-image: linear-gradient(90deg, hsl(230, 50%, 30%),/* hsl(230, 100%, 20%) */ hsl(229, 30%, 40%));
   display: grid;
-  grid-template-columns: 4fr 2fr 2fr 2fr 2fr 4fr;
+  grid-template-columns: 4fr 2fr 2fr 2fr 2fr 2fr 4fr;
 }
 
 .main-header {
@@ -225,6 +225,25 @@ Footer Styling
 /*
 Shared Styles
 */
+
+.button-link {
+  text-decoration: none;
+}
+
+.button {
+  border: 2px solid #fff;
+  border-radius: 30%;
+  display: flex;
+  background-image: linear-gradient(hsl(35, 95%, 61%), hsl(35, 85%, 71%));
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.button-text {
+  color: #fff;
+  font-family: "Love Ya Like A Sister";
+}
 
 .box {
   border: clamp(2px, 0.25vw, 0.25vw) solid #feca80;
@@ -321,18 +340,6 @@ Camps Styling
 /*
 About us Styling
 */
-/* ask everybody about colors */
-
-/*
-FAQ/policy Styling
-*/
-
-/*
-.about-content-box {
-  display: flex;
-  justify-content: center;
-}
-*/
 
 #angela-box {
   padding-bottom: 30vh;
@@ -362,4 +369,34 @@ FAQ/policy Styling
   margin-bottom: 4vh;
 }
 
+/*
+FAQ Styling
+*/
+
+/*
+Policy Styling
+*/
+
+#policy-box {
+  background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
+  border: none;
+}
+
+/*
+.about-content-box {
+  display: flex;
+  justify-content: center;
+}
+*/
+
+
 /* WIP: camp, checkout, agreement, register */
+
+/*
+Checkout Styling
+*/
+
+#square-container {
+  display: flex;
+  justify-content: center;
+}
