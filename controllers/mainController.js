@@ -3,7 +3,7 @@ Simple Page Requests
 */
 
 exports.index = (req, res) => {
-    res.render('./index');
+    res.render('index');
 }
 
 exports.about = (req, res) => {
@@ -36,4 +36,8 @@ exports.agreement = (req, res) => {
 
 exports.checkout = (req, res) => {
     res.render('checkout');
+}
+
+exports.tutoring = (req, res) => {
+    res.render('tutoring');
 }

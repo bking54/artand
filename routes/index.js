@@ -27,7 +27,10 @@ router.get('/register', mainController.register);
 //Policy Agreement
 router.get('/agreement', mainController.agreement);
 
-//Checkout with Square
+//Checkout with Paypal
 router.get('/checkout', mainController.checkout);
+
+//Tutoring Services
+router.get('/tutoring', mainController.tutoring);
 
 module.exports = router;

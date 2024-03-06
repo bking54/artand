@@ -69,8 +69,8 @@ h2 {
 }
 
 h3 {
-  font-size: 300%;
-  padding-top: 5vh;
+  font-size: clamp(20px, 3vw, 3vw);
+  padding-top: 1vw;
   text-align: center;
   color: #fff;
   font-family: 'Love Ya Like A Sister', cursive;
@@ -140,7 +140,7 @@ Header Styling
   /* background-image: linear-gradient(90deg, #141e51, #353b56); */
   background-image: linear-gradient(90deg, hsl(230, 50%, 30%),/* hsl(230, 100%, 20%) */ hsl(229, 30%, 40%));
   display: grid;
-  grid-template-columns: 4fr 2fr 2fr 2fr 2fr 2fr 4fr;
+  grid-template-columns: 4fr 3fr 3fr 3fr 3fr 3fr 3fr 4fr;
 }
 
 .main-header {
@@ -231,10 +231,11 @@ Shared Styles
   justify-content: center;
   align-items: center;
   border: .25vw solid #fff;
-  border-radius: 20%;
+  border-radius: 30px;
   width: clamp(40px, 12vw, 12vw);
   height: 4.5vw;
   text-decoration: none;
+  margin-top: 1vw;
 }
 
 .button-text {
@@ -245,6 +246,7 @@ Shared Styles
 }
 
 .button-purple {
+  width: 24vw;
   background-image: linear-gradient(90deg, hsl(276, 84%, 56%), hsl(276, 84%, 70%));
 }
 
@@ -252,13 +254,40 @@ Shared Styles
   background-image: linear-gradient(90deg, hsl(276, 84%, 60%), hsl(276, 84%, 76%));
 }
 
+.button-pink {
+  width: 24vw;
+  background-image: linear-gradient(90deg, hsl(346, 84%, 66%), hsl(346, 84%, 56%));
+}
+
+.button-pink:hover {
+  background-image: linear-gradient(90deg, hsl(346, 84%, 70%), hsl(346, 84%, 60%));
+}
+
+.button-green {
+  width: 24vw;
+  background-image: linear-gradient(90deg, hsl(117, 82%, 60%), hsl(117, 82%, 70%));
+}
+
+.button-green:hover {
+  background-image: linear-gradient(90deg, hsl(117, 82%, 56%), hsl(117, 82%, 66%));
+}
+
+.button-blue {
+  width: 24vw;
+  background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
+}
+
+.button-blue:hover {
+  background-image: linear-gradient(90deg, hsl(193, 60%, 64%), hsl(193, 60%, 74%));
+}
+
 .box {
-  padding: 0vh 20vh 7vh 20vh;
+  /*padding: 0vh 20vh 7vh 20vh;*/
   width: auto;
   margin: clamp(10px, 2vw, 2vw);
   margin-top: 10vh;
-  margin-bottom: 1%;
-  border-radius: 10%;
+  margin-bottom: 1vh;
+  border-radius: 50px;
 }
 
 .box-text {
@@ -267,6 +296,12 @@ Shared Styles
   font-size: 150%;
   word-break: normal;
   white-space: normal;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-msg {
@@ -281,6 +316,45 @@ Shared Styles
 /*
 Index Styling
 */
+
+.bottom-border-white {
+  border-bottom: 0.25vw solid #fff;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.camp-header-text {
+  font-family: 'Love Ya Like A Sister';
+  color: #fff;
+  border-bottom: 0.25vw solid #fff;
+  font-size: clamp(20px, 2.5vw, 2.5vw);
+  padding-bottom: 1vw;
+  margin: 1vw 2vw 1vw 2vw;
+}
+
+.date-grid-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1vw auto 1vw auto;
+}
+
+.date-text {
+  font-family: 'Love Ya Like A Sister';
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-size: clamp(14px, 2vw, 2vw);
+  margin: 1vw;
+  letter-spacing: 1px;
+}
+
+.description-text {
+  font-family: 'Playpen Sans';
+  color: #fff;
+  font-size: clamp(12px, 1.5vw, 1.5vw);
+  margin: auto 2vw 2vw 2vw;
+  text-align: center;
+}
 
 #box-grid {
   display: grid;
@@ -298,25 +372,25 @@ Index Styling
 
 /* these 4 need a rename, they belong to the index page */
 #camp1 {
-  padding-bottom: 10vh;
+  padding-bottom: 2.5vw;
   background-image: linear-gradient(90deg, hsl(276, 84%, 56%), hsl(276, 84%, 76%));
   /*border: none;*/
 }
 
 #camp2 {
-  padding-bottom: 10vh;
+  padding-bottom: 2.5vw;
   background-image: linear-gradient(90deg, hsl(346, 84%, 66%), hsl(346, 84%, 56%));
   /*border: none;*/
 }
 
 #camp3 {
-  padding-bottom: 10vh;
+  padding-bottom: 2.5vw;
   background-image: linear-gradient(90deg, hsl(117, 82%, 60%), hsl(117, 82%, 70%));
   /*border: none;*/
 }
 
 #camp4 {
-  padding-bottom: 10vh;
+  padding-bottom: 2.5vw;
   background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
   /*border: none;*/
 }
@@ -324,7 +398,7 @@ Index Styling
 /*
 Camps Styling
 */
-/* rename vague ids */
+/* rename vague ids!!!! they can be seen! */
 
 .camp-content-box {
   align-items: center;
