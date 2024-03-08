@@ -1,14 +1,87 @@
 <%- include('./partials/header.ejs')%>
     <div class="main-container">
-        <div class="content-wrap">
-            <h2>Select Camps</h2>
-            <h2>Contact Info</h2>
-            <h2>Child Information</h2>
-            <a class="button" id="agreement-button" href="/agreement">
-                <div>
-                    <p class="button-text">Continue</p>
-                </div>
-            </a>
+        <div class="content-wrap center-content">
+            <div class="form-container">
+                <form action="/pay" method="POST">
+                    <div id="household-info">
+                        <h2>Household Information</h2>
+                        <h2>Parent/Guardian Information</h2>
+                        <div id="parent-1" class="field-container">
+                            <h2>Parent/Guardian 1</h2>
+                            <label for="fname-1">First name:</label>
+                            <input type="text" id="fname-1" name="fname-1" required>
+                            <label for="lname-1">Last name:</label>
+                            <input type="text" id="lname-1" name="lname-1" required>
+                            <label for="phone-1">Daytime Contact Phone:</label>
+                            <input type="text" id="phone-1" name="phone-1" required>
+                            <label for="email-1">Email Address:</label>
+                            <input type="text" id="email-1" name="email-1" required>
+                            <label for="address-1">Street Address:</label>
+                            <input type="text" id="address-1" name="address-1" required>
+                            <label for="aptnum-1">Apartment Number:</label>
+                            <input type="text" id="aptnum-1" name="aptnum-1">
+                            <label for="city-1">City:</label>
+                            <input type="text" id="city-1" name="city-1" required>
+                            <label for="state-1">State:</label>
+                            <input type="text" id="state-1" name="state-1" required>
+                            <label for="zip-1">Zip Code:</label>
+                            <input type="text" id="zip-1" name="zip-1" required>
+                        </div>
+                        <div id="parent-2" class="field-container">
+                            <h2>Parent/Guardian 2</h2>
+                            <label for="fname-2">First name:</label>
+                            <input type="text" id="fname-2" name="fname-2" required>
+                            <label for="lname-2">Last name:</label>
+                            <input type="text" id="lname-2" name="lname-2" required>
+                            <label for="phone-2">Daytime Contact Phone:</label>
+                            <input type="text" id="phone-2" name="phone-2" required>
+                            <label for="email-2">Email Address:</label>
+                            <input type="text" id="email-2" name="email-2" required>
+                            <label for="address-2">Street Address:</label>
+                            <input type="text" id="address-2" name="address-2" required>
+                            <label for="aptnum-2">Apartment Number:</label>
+                            <input type="text" id="aptnum-2" name="aptnum-2">
+                            <label for="city-2">City:</label>
+                            <input type="text" id="city-2" name="city-2" required>
+                            <label for="state-2">State:</label>
+                            <input type="text" id="state-2" name="state-2" required>
+                            <label for="zip-2">Zip Code:</label>
+                            <input type="text" id="zip-2" name="zip-2" required>
+                        </div>
+                        <h2>Local Emergency Contact</h2>
+                        <div id="emergency-contact" class="field-container">
+                            <label for="fname-ec">First name:</label>
+                            <input type="text" id="fname-ec" name="fname-ec" required>
+                            <label for="lname-ec">Last name:</label>
+                            <input type="text" id="lname-ec" name="lname-ec" required>
+                        </div>
+                    </div>
+                    <div id="num-children" class="field-container">
+                        <h2>How Many Campers Are You Registering?</h2>
+                        <label>1</label>
+                        <input type="radio" name="num-children" value="1" id="radio-1" required checked>
+                        <label>2</label>
+                        <input type="radio" name="num-children" value="2" id="radio-2">
+                        <label>3</label>
+                        <input type="radio" name="num-children" value="3" id="radio-3">
+                        <label>4</label>
+                        <input type="radio" name="num-children" value="4" id="radio-4">
+                    </div>
+                    <h2>Camper Information</h2>
+                    <div id="camper-1" class="field-container">
+                        <h2>Camper 1</h2>
+                        <label for="camper-1-fname">First name:</label>
+                        <input type="text" id="camper-1-fname" name="camper-1-fname" required>
+                        <label for="camper-2-lname">Last name:</label>
+                        <input type="text" id="camper-2-lname" name="camper-2-lname" required>
+                    </div>
+                    <h2>Policy Agreement</h2>
+                    <label>I have read, and agree to the terms of the Policy Handbook</label>
+                    <input type="checkbox" name="agreement" required>
+                    <h2>Payment</h2>
+                    <button id="agreement-button" class="button" type="submit">Register and Pay</button>
+                </form>
+            </div>
         </div>
     </div>
 <%- include('./partials/footer.ejs')%>

@@ -33,4 +33,9 @@ router.get('/checkout', mainController.checkout);
 //Tutoring Services
 router.get('/tutoring', mainController.tutoring);
 
+//POST Requests
+
+//Register and Pay
+router.post('/pay', mainController.pay)
+
 module.exports = router;

@@ -41,3 +41,26 @@ exports.checkout = (req, res) => {
 exports.tutoring = (req, res) => {
     res.render('tutoring');
 }
+
+//POST
+
+//Payment & Registration
+//Needs to email user & 4rtand, 
+//accept paypal, and redirect with a message
+exports.pay = (req, res) => {
+    let info = Object.entries(req.body);
+
+    //start here
+    if (info[0][1] == '1') {
+
+    } else if (info[0][1] == '2') {
+
+    } else if (info[0][1] == '3') {
+
+    } else if (info[0][1] == '4') {
+
+    }
+
+    console.log(info);
+    res.render('camps');
+}
