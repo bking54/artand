@@ -52,7 +52,7 @@ exports.pay = (req, res) => {
     let values = Object.values(req.body);
 
     //start here
-    console.log(keys);
+    console.log(Object.entries(req.body));
 
     //Sort data
 

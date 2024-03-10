@@ -56,6 +56,39 @@
                             <input type="text" id="fname-ec" name="fname-ec" required>
                             <label for="lname-ec">Last name:</label>
                             <input type="text" id="lname-ec" name="lname-ec" required>
+                            <label for="relation-ec">Relationship to Child:</label>
+                            <input type="text" id="relation-ec" name="relation-ec" required>
+                            <label for="cellphone-ec">Cell Number:</label>
+                            <input type="tel" name="cellphone-ec" required>
+                            <label for="homephone-ec">Home Number:</label>
+                            <input type="tel" name="homephone-ec">
+                            <label for="workphone-ec">Work Number:</label>
+                            <input type="tel" name="workphone-ec">
+                        </div>
+                    </div>
+                    <h2>Approved Pick-up List</h2>
+                    <div id="pickup-list" class="field-container">
+                        <input type="button" id="add-pickup" value="Add An Approved Pick-up">
+                        <div id="pickup-1">
+                            <input type="hidden" id="has-pickup-1" name="has-pickup-1" value="false">
+                            <label for="name-pickup-1">Full Name:</label>
+                            <input type="text" id="name-pickup-1" name="name-pickup-1" required class="pickup-1-fields">
+                            <label for="relation-pickup-1">Relationship to Child:</label>
+                            <input type="text" id="relation-pickup-1" name="relation-pickup-1" required class="pickup-1-fields">
+                        </div>
+                        <div id="pickup-2">
+                            <input type="hidden" id="has-pickup-2" name="has-pickup-2" value="false">
+                            <label for="name-pickup-2">Full Name:</label>
+                            <input type="text" id="name-pickup-2" name="name-pickup-2" required class="pickup-2-fields">
+                            <label for="relation-pickup-2">Relationship to Child:</label>
+                            <input type="text" id="relation-pickup-2" name="relation-pickup-2" required class="pickup-2-fields">
+                        </div>
+                        <div id="pickup-3">
+                            <input type="hidden" id="has-pickup-3" name="has-pickup-3" value="false">
+                            <label for="name-pickup-3">Full Name:</label>
+                            <input type="text" id="name-pickup-3" name="name-pickup-3" required class="pickup-3-fields">
+                            <label for="relation-pickup-3">Relationship to Child:</label>
+                            <input type="text" id="relation-pickup-3" name="relation-pickup-3" required class="pickup-3-fields">
                         </div>
                     </div>
                     <h2>Camper Information</h2>
@@ -69,6 +102,24 @@
                         <input type="radio" name="num-children" value="3" id="radio-3">
                         <label>4</label>
                         <input type="radio" name="num-children" value="4" id="radio-4">
+                    </div>
+                    <div id="camp-selections">
+                        <input type="hidden" id="pmz-1" name="pmz-1" value="true">
+                        <input type="hidden" id="tif-1" name="tif-1" value="false">
+                        <input type="hidden" id="geo-1" name="geo-1" value="false">
+                        <input type="hidden" id="tum-1" name="tum-1" value="false">
+                        <input type="hidden" id="pmz-2" name="pmz-2" value="true">
+                        <input type="hidden" id="tif-2" name="tif-2" value="false">
+                        <input type="hidden" id="geo-2" name="geo-2" value="false">
+                        <input type="hidden" id="tum-2" name="tum-2" value="false">
+                        <input type="hidden" id="pmz-3" name="pmz-3" value="true">
+                        <input type="hidden" id="tif-3" name="tif-3" value="false">
+                        <input type="hidden" id="geo-3" name="geo-3" value="false">
+                        <input type="hidden" id="tum-3" name="tum-3" value="false">
+                        <input type="hidden" id="pmz-4" name="pmz-4" value="true">
+                        <input type="hidden" id="tif-4" name="tif-4" value="false">
+                        <input type="hidden" id="geo-4" name="geo-4" value="false">
+                        <input type="hidden" id="tum-4" name="tum-4" value="false">
                     </div>
                     <div id="camper-1" class="field-container box">
                         <h2>Camper 1</h2>
