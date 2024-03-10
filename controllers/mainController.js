@@ -48,19 +48,18 @@ exports.tutoring = (req, res) => {
 //Needs to email user & 4rtand, 
 //accept paypal, and redirect with a message
 exports.pay = (req, res) => {
-    let info = Object.entries(req.body);
+    let keys = Object.keys(req.body);
+    let values = Object.values(req.body);
 
     //start here
-    if (info[0][1] == '1') {
+    console.log(keys);
 
-    } else if (info[0][1] == '2') {
+    //Sort data
 
-    } else if (info[0][1] == '3') {
+    //Email Confirmation
 
-    } else if (info[0][1] == '4') {
+    //paypal magic
 
-    }
-
-    console.log(info);
+    //final redirect
     res.render('camps');
 }

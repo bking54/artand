@@ -36,6 +36,7 @@ router.get('/tutoring', mainController.tutoring);
 //POST Requests
 
 //Register and Pay
+//WIP
 router.post('/pay', mainController.pay)
 
 module.exports = router;

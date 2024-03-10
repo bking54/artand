@@ -6,6 +6,8 @@
                     <div id="household-info">
                         <h2>Household Information</h2>
                         <h2>Parent/Guardian Information</h2>
+                        <label for="extra-parent">Add A Second Parent/Guardian</label>
+                        <input type="checkbox" id="extra-parent" name="extra-parent" value="Add Another Parent/Guardian">
                         <div id="parent-1" class="field-container">
                             <h2>Parent/Guardian 1</h2>
                             <label for="fname-1">First name:</label>
@@ -15,7 +17,7 @@
                             <label for="phone-1">Daytime Contact Phone:</label>
                             <input type="text" id="phone-1" name="phone-1" required>
                             <label for="email-1">Email Address:</label>
-                            <input type="text" id="email-1" name="email-1" required>
+                            <input type="email" id="email-1" name="email-1" required>
                             <label for="address-1">Street Address:</label>
                             <input type="text" id="address-1" name="address-1" required>
                             <label for="aptnum-1">Apartment Number:</label>
@@ -30,23 +32,23 @@
                         <div id="parent-2" class="field-container">
                             <h2>Parent/Guardian 2</h2>
                             <label for="fname-2">First name:</label>
-                            <input type="text" id="fname-2" name="fname-2" required>
+                            <input type="text" id="fname-2" name="fname-2" required class="parent-2-fields">
                             <label for="lname-2">Last name:</label>
-                            <input type="text" id="lname-2" name="lname-2" required>
+                            <input type="text" id="lname-2" name="lname-2" required class="parent-2-fields">
                             <label for="phone-2">Daytime Contact Phone:</label>
-                            <input type="text" id="phone-2" name="phone-2" required>
+                            <input type="text" id="phone-2" name="phone-2" required class="parent-2-fields">
                             <label for="email-2">Email Address:</label>
-                            <input type="text" id="email-2" name="email-2" required>
+                            <input type="email" id="email-2" name="email-2" required class="parent-2-fields">
                             <label for="address-2">Street Address:</label>
-                            <input type="text" id="address-2" name="address-2" required>
+                            <input type="text" id="address-2" name="address-2" required class="parent-2-fields">
                             <label for="aptnum-2">Apartment Number:</label>
                             <input type="text" id="aptnum-2" name="aptnum-2">
                             <label for="city-2">City:</label>
-                            <input type="text" id="city-2" name="city-2" required>
+                            <input type="text" id="city-2" name="city-2" required class="parent-2-fields">
                             <label for="state-2">State:</label>
-                            <input type="text" id="state-2" name="state-2" required>
+                            <input type="text" id="state-2" name="state-2" required class="parent-2-fields">
                             <label for="zip-2">Zip Code:</label>
-                            <input type="text" id="zip-2" name="zip-2" required>
+                            <input type="text" id="zip-2" name="zip-2" required class="parent-2-fields">
                         </div>
                         <h2>Local Emergency Contact</h2>
                         <div id="emergency-contact" class="field-container">
@@ -56,6 +58,7 @@
                             <input type="text" id="lname-ec" name="lname-ec" required>
                         </div>
                     </div>
+                    <h2>Camper Information</h2>
                     <div id="num-children" class="field-container">
                         <h2>How Many Campers Are You Registering?</h2>
                         <label>1</label>
@@ -67,13 +70,65 @@
                         <label>4</label>
                         <input type="radio" name="num-children" value="4" id="radio-4">
                     </div>
-                    <h2>Camper Information</h2>
-                    <div id="camper-1" class="field-container">
+                    <div id="camper-1" class="field-container box">
                         <h2>Camper 1</h2>
-                        <label for="camper-1-fname">First name:</label>
-                        <input type="text" id="camper-1-fname" name="camper-1-fname" required>
-                        <label for="camper-2-lname">Last name:</label>
-                        <input type="text" id="camper-2-lname" name="camper-2-lname" required>
+                        <label for="camp1-1">Plus Minus Zero</label>
+                        <input type="checkbox" name="camp1-1" id="camp1-check-1" checked>
+                        <label for="camp2-1">Times Into Fractions</label>
+                        <input type="checkbox" name="camp2-1" id="camp2-check-1">
+                        <label for="camp3-1">Geometry</label>
+                        <input type="checkbox" name="camp3-1" id="camp3-check-1">
+                        <label for="camp4-1">Turbo Multiplication</label>
+                        <input type="checkbox" name="camp4-1" id="camp4-check-1">
+                        <label for="fname-camper-1">First name:</label>
+                        <input type="text" id="fname-camper-1" name="fname-camper-1" required>
+                        <label for="lname-camper-1">Last name:</label>
+                        <input type="text" id="lname-camper-1" name="lname-camper-1" required>
+                    </div>
+                    <div id="camper-2" class="field-container box">
+                        <h2>Camper 2</h2>
+                        <label for="camp1-2">Plus Minus Zero</label>
+                        <input type="checkbox" name="camp1-2" id="camp1-check-2" checked>
+                        <label for="camp2-2">Times Into Fractions</label>
+                        <input type="checkbox" name="camp2-2" id="camp2-check-2">
+                        <label for="camp3-2">Geometry</label>
+                        <input type="checkbox" name="camp3-2" id="camp3-check-2">
+                        <label for="camp4-2">Turbo Multiplication</label>
+                        <input type="checkbox" name="camp4-2" id="camp4-check-2">
+                        <label for="fname-camper-2">First name:</label>
+                        <input type="text" id="fname-camper-2" name="fname-camper-2" required class="camper-2-fields">
+                        <label for="lname-camper-2">Last name:</label>
+                        <input type="text" id="lname-camper-2" name="lname-camper-2" required class="camper-2-fields">
+                    </div>
+                    <div id="camper-3" class="field-container box">
+                        <h2>Camper 3</h2>
+                        <label for="camp1-3">Plus Minus Zero</label>
+                        <input type="checkbox" name="camp1-3" id="camp1-check-3" checked>
+                        <label for="camp2-3">Times Into Fractions</label>
+                        <input type="checkbox" name="camp2-3" id="camp2-check-3">
+                        <label for="camp3-3">Geometry</label>
+                        <input type="checkbox" name="camp3-3" id="camp3-check-3">
+                        <label for="camp4-3">Turbo Multiplication</label>
+                        <input type="checkbox" name="camp4-3" id="camp4-check-3">
+                        <label for="fname-camper-3">First name:</label>
+                        <input type="text" id="fname-camper-3" name="fname-camper-3" required class="camper-3-fields">
+                        <label for="lname-camper-3">Last name:</label>
+                        <input type="text" id="lname-camper-3" name="lname-camper-3" required class="camper-3-fields">
+                    </div>
+                    <div id="camper-4" class="field-container box">
+                        <h2>Camper 4</h2>
+                        <label for="camp1-4">Plus Minus Zero</label>
+                        <input type="checkbox" name="camp1-4" id="camp1-check-4" checked>
+                        <label for="camp2-4">Times Into Fractions</label>
+                        <input type="checkbox" name="camp2-4" id="camp2-check-4">
+                        <label for="camp3-4">Geometry</label>
+                        <input type="checkbox" name="camp3-4" id="camp3-check-4">
+                        <label for="camp4-4">Turbo Multiplication</label>
+                        <input type="checkbox" name="camp4-4" id="camp4-check-4">
+                        <label for="fname-camper-4">First name:</label>
+                        <input type="text" id="fname-camper-4" name="fname-camper-4" required class="camper-4-fields">
+                        <label for="lname-camper-4">Last name:</label>
+                        <input type="text" id="lname-camper-4" name="lname-camper-4" required class="camper-4-fields">
                     </div>
                     <h2>Policy Agreement</h2>
                     <label>I have read, and agree to the terms of the Policy Handbook</label>
