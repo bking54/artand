@@ -17,8 +17,10 @@ $(document).ready(function () {
         $('#parent-2').toggle();
         if ($('#extra-parent').is(':checked')) {
             $('.parent-2-fields').prop('required', true);
+            $('#has-parent-2').val('true');
         } else {
             $('.parent-2-fields').prop('required', false);
+            $('#has-parent-2').val('false');
         }
     });
 

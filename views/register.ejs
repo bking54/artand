@@ -8,6 +8,7 @@
                         <h2>Parent/Guardian Information</h2>
                         <label for="extra-parent">Add A Second Parent/Guardian</label>
                         <input type="checkbox" id="extra-parent" name="extra-parent" value="Add Another Parent/Guardian">
+                        <input type="hidden" name="has-parent-2" id="has-parent-2" value="false">
                         <div id="parent-1" class="field-container">
                             <h2>Parent/Guardian 1</h2>
                             <label for="fname-1">First name:</label>
@@ -15,7 +16,7 @@
                             <label for="lname-1">Last name:</label>
                             <input type="text" id="lname-1" name="lname-1" required>
                             <label for="phone-1">Daytime Contact Phone:</label>
-                            <input type="text" id="phone-1" name="phone-1" required>
+                            <input type="text" id="phone-1" name="phone-1" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                             <label for="email-1">Email Address:</label>
                             <input type="email" id="email-1" name="email-1" required>
                             <label for="address-1">Street Address:</label>
@@ -36,7 +37,7 @@
                             <label for="lname-2">Last name:</label>
                             <input type="text" id="lname-2" name="lname-2" required class="parent-2-fields">
                             <label for="phone-2">Daytime Contact Phone:</label>
-                            <input type="text" id="phone-2" name="phone-2" required class="parent-2-fields">
+                            <input type="text" id="phone-2" name="phone-2" required class="parent-2-fields" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                             <label for="email-2">Email Address:</label>
                             <input type="email" id="email-2" name="email-2" required class="parent-2-fields">
                             <label for="address-2">Street Address:</label>
@@ -59,11 +60,11 @@
                             <label for="relation-ec">Relationship to Child:</label>
                             <input type="text" id="relation-ec" name="relation-ec" required>
                             <label for="cellphone-ec">Cell Number:</label>
-                            <input type="tel" name="cellphone-ec" required>
+                            <input type="tel" name="cellphone-ec" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                             <label for="homephone-ec">Home Number:</label>
-                            <input type="tel" name="homephone-ec">
+                            <input type="tel" name="homephone-ec" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                             <label for="workphone-ec">Work Number:</label>
-                            <input type="tel" name="workphone-ec">
+                            <input type="tel" name="workphone-ec" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                         </div>
                     </div>
                     <h2>Approved Pick-up List</h2>
