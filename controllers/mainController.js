@@ -177,6 +177,8 @@ exports.pay = (req, res) => {
     //Has agreed to the policy agreement
     let agreement = values[keys.indexOf('agreement')] == 'on' ? true : false;
 
+    //format data
+    //temp?
     let data = {
         parent1: parent1,
         parent2: parent2,
