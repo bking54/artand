@@ -42,7 +42,7 @@ a {
   color: #faad3f;
   text-decoration: none;
   padding: 2.5%;
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   font-size: clamp(13px, 1.5vw, 2vw);
 }
 
@@ -55,7 +55,7 @@ a:hover {
 h1 {
   padding: 1vh 2vw 1vh 2vw;
   font-size: clamp(28px, 4.5vw, 5vw);
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Arial', cursive;
 }
 
 /* unused, replaced with .page-msg */
@@ -65,7 +65,7 @@ h2 {
   text-align: center;
   color: 3695c1;
   font-size: 3vw;
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Arial', cursive;
 }
 
 h3 {
@@ -73,7 +73,7 @@ h3 {
   padding-top: 1vw;
   text-align: center;
   color: #fff;
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Arial', cursive;
 }
 
 h5 {
@@ -95,7 +95,7 @@ Header Styling
   color: #fff;
   text-decoration: none;
   padding: 2.5%;
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   font-size: clamp(13px, 1.5vw, 2vw);
 }
 
@@ -111,7 +111,7 @@ Header Styling
 
 #main-phone {
   font-size: clamp(6px, 1.5vw, 16px);
-  font-family: "Love Ya Like A Sister";
+  font-family: "Arial";
   color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
@@ -123,7 +123,7 @@ Header Styling
 
 #main-location {
   font-size: clamp(6px, 1.5vw, 16px);
-  font-family: "Love Ya Like A Sister";
+  font-family: "Arial";
   color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
@@ -178,7 +178,7 @@ Header Styling
   position: absolute;
   padding: 1vh 2vw 1vh 2vw;
   font-size: clamp(28px, 4.5vw, 5vw);
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Arial', cursive;
 }
 
 /*
@@ -242,7 +242,7 @@ Shared Styles
 .button-text {
   margin: 4px auto 4px auto;
   color: #fff;
-  font-family: "Love Ya Like A Sister";
+  font-family: "Arial";
   font-size: 1.8vw;
 }
 
@@ -307,7 +307,7 @@ Shared Styles
 
 .page-msg {
   margin: auto 15% auto 15%;
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   color: #00082f;
   font-size: clamp(150%, 2.5vw, 3vw);
   text-align: center;
@@ -325,7 +325,7 @@ Index Styling
 }
 
 .camp-header-text {
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   color: #fff;
   border-bottom: 0.25vw solid #fff;
   font-size: clamp(20px, 2.5vw, 2.5vw);
@@ -340,7 +340,7 @@ Index Styling
 }
 
 .date-text {
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -457,7 +457,7 @@ Camps Styling
 }
 
 .date-text-camps {
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -467,7 +467,7 @@ Camps Styling
 }
 
 .time-text-camps {
-  font-family: 'Love Ya Like A Sister';
+  font-family: 'Arial';
   color: #fff;
   font-size: clamp(12px, 1.2vw, 1.2vw);
   text-align: center;
@@ -561,6 +561,14 @@ FAQ Styling
   margin-top: 2vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.question {
+  color:#000d4e;
+}
+
+.answer {
+  color:#000d4e;
 }
 
 /*
