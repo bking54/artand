@@ -1,3 +1,18 @@
+const nodemailer = require('nodemailer');
+//require('dotenv').config();
+
+//email transporter
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    auth: {
+        user: 'bking5194@gmail.com',
+        pass: 'pjrp chgy hwgd bgrx'
+    }
+});
+
 /*
 Simple Page Requests
 */
@@ -47,7 +62,7 @@ exports.tutoring = (req, res) => {
 //Payment & Registration
 //Needs to email user & 4rtand, 
 //accept paypal, and redirect with a message
-exports.pay = (req, res) => {
+exports.pay = (req, res/*, next*/) => {
     let keys = Object.keys(req.body);
     let values = Object.values(req.body);
 
@@ -197,11 +212,38 @@ exports.pay = (req, res) => {
     console.log(data);
 
     //Email Confirmation
+    //Send to client and business
+
+    let clientMailOptions = {
+        from: {
+            name: 'Artand - Math Art Connections',
+            address: 'bking5194@gmail.com'
+        },
+        to: 'bking5194@gmail.com',
+        subject: 'Math Art Connections Registration',
+        text: 'This is just a test'
+    }
+
+    let mailOptions = undefined;
+
+    const sendToCleint = async (transporter, clientMailOptions) => {
+        try {
+            await transporter.sendMail(clientMailOptions);
+        } catch(err) {
+            console.log('ERROR WITH NODEMAILER');
+            //next(err);
+        }
+    }
+
+    const sendToArchive = undefined;
+
+    //uncomment in production
+    //sendToClient(transporter, mailOptions);
 
     //Send data to artand
 
     //paypal magic
 
     //final redirect
-    res.render('camps');
+    res.redirect('/camps');
 }

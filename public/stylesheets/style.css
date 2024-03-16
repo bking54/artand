@@ -494,30 +494,60 @@ Camps Styling
 About us Styling
 */
 
+.profile-grid {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+.pfp {
+  width: clamp(25px, 16vw, 250px);
+  border: 0.25vw solid #fff;
+  border-radius: 30px;
+}
+
+.pfp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  border-left: 0.25vw solid #fff;
+}
+
+.name {
+  margin-top: 0;
+}
+
+.profile-text {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
 #angela-box {
-  padding-bottom: 30vh;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
   background-image: linear-gradient(90deg, hsl(276, 84%, 56%), hsl(276, 84%, 76%));
   border: none;
-  width: 40vw;
   margin: auto;
   margin-bottom: 4vh;
   margin-top: 4vh;
 }
 
 #dj-box {
-  padding-bottom: 30vh;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
   background-image: linear-gradient(90deg, hsl(193, 60%, 60%), hsl(193, 60%, 70%));
   border: none;
-  width: 40vw;
   margin: auto;
   margin-bottom: 4vh;
 }
 
 #brad-box {
-  padding-bottom: 30vh;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
   background-image: linear-gradient(90deg, hsl(346, 84%, 66%), hsl(346, 84%, 56%));
   border: none;
-  width: 40vw;
   margin: auto;
   margin-bottom: 4vh;
 }
@@ -525,6 +555,13 @@ About us Styling
 /*
 FAQ Styling
 */
+
+.faqs {
+  border-top: 0.25vw solid #000d4e;
+  margin-top: 2vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 /*
 Policy Styling
