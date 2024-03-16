@@ -187,7 +187,7 @@ Body Styling
 
 .body-text {
   font-size: clamp(12px, 2vw, 20px);
-  font-family: "Playpen Sans";
+  font-family: "Arial";
   color:#000d4e;
   width: 80vw;
   text-align: center;
@@ -292,7 +292,7 @@ Shared Styles
 }
 
 .box-text {
-  font-family: "Playpen Sans";
+  font-family: "Arial";
   color: #fff;
   font-size: clamp(12px, 1.5vw, 1.5vw);
   word-break: normal;
@@ -350,7 +350,7 @@ Index Styling
 }
 
 .description-text {
-  font-family: 'Playpen Sans';
+  font-family: 'Arial';
   color: #fff;
   font-size: clamp(12px, 1.5vw, 1.5vw);
   margin: 0.5vw;
@@ -449,7 +449,7 @@ Camps Styling
 }
 
 .description-text-camps {
-  font-family: 'Playpen Sans';
+  font-family: 'Arial';
   color: #fff;
   font-size: clamp(10px, 1vw, 1vw);
   margin: 0.5vw;
@@ -560,15 +560,24 @@ FAQ Styling
   border-top: 0.25vw solid #000d4e;
   margin-top: 2vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 
 .question {
   color:#000d4e;
+  font-family: 'Arial';
+  grid-column: 1 / 3;
+  text-align: left;
+  font-size: 2.5vw;
 }
 
 .answer {
-  color:#000d4e;
+  color:#151e4d;
+  font-family: 'Arial';
+  grid-column: 2 / 4;
+  text-align: right;
 }
 
 /*
