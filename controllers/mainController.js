@@ -38,7 +38,7 @@ exports.policy = (req, res) => {
 }
 
 exports.directions = (req, res) => {
-    res.redirect('http://www.google.com');
+    res.redirect('https://www.google.com/maps/place/1417+Seaton+Rd,+Durham,+NC+27713/@35.8954226,-78.9136961,17z/data=!3m1!4b1!4m6!3m5!1s0x89acef3ea5f5036b:0x437d4c6c34a6313e!8m2!3d35.8954183!4d-78.9111212!16s%2Fg%2F11b8v5qqch?entry=ttu');
 }
 
 exports.register = (req, res) => {
@@ -218,6 +218,10 @@ exports.pay = (req, res/*, next*/) => {
     //Email Confirmation
     //Send to client and business
 
+    let clientHTML = '';
+
+    let archiveHTML = '';
+
     let clientMailOptions = {
         from: {
             name: 'Artand - Math Art Connections',
@@ -226,9 +230,17 @@ exports.pay = (req, res/*, next*/) => {
         to: 'bking5194@gmail.com',
         subject: 'Math Art Connections Registration',
         text: 'This is just a test'
-    }
+    };
 
-    let mailOptions = undefined;
+    let mailOptions = {
+        from: {
+            name: 'Artand - Client Archiver',
+            address: 'bking5194@gmail.com'
+        },
+        to: 'bking5194@gmail.com',
+        subject: 'New Registration!',
+        text: ''
+    };
 
     const sendToCleint = async (transporter, clientMailOptions) => {
         try {
@@ -237,12 +249,19 @@ exports.pay = (req, res/*, next*/) => {
             console.log('ERROR WITH NODEMAILER');
             //next(err);
         }
-    }
+    };
 
-    const sendToArchive = undefined;
+    const sendToArchive = async (transporter, mailOptions) => {
+        try {
+            await transporter.sendMail(mailOptions);
+        } catch (err) {
+            console.log('ERROR IN NODEMAILER');
+        }
+    };
 
     //uncomment in production
-    //sendToClient(transporter, mailOptions);
+    //sendToClient(transporter, clientMailOptions);
+    //sendToArchive(transporter, mailOptions);
 
     //paypal magic
     //NOT IN THIS VERSION
