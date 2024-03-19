@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: 'bking5194@gmail.com',
+        user: 'bking5194@gmail.com', //use dotenv
         pass: 'pjrp chgy hwgd bgrx'
     }
 });
@@ -43,14 +43,6 @@ exports.directions = (req, res) => {
 
 exports.register = (req, res) => {
     res.render('register');
-}
-
-exports.agreement = (req, res) => {
-    res.render('policyagreement');
-}
-
-exports.checkout = (req, res) => {
-    res.render('checkout');
 }
 
 exports.tutoring = (req, res) => {
@@ -149,7 +141,10 @@ exports.pay = (req, res/*, next*/) => {
         camper1 = {
             firstName: values[keys.indexOf('fname-camper-1')],
             lastName:  values[keys.indexOf('lname-camper-1')],
-            enrolled: [camp1, camp2, camp3, camp4]
+            enrolled: [camp1, camp2, camp3, camp4],
+            bday: values[keys.indexOf('bday-camper-1')],
+            grade: values[keys.indexOf('grade-camper-1')],
+            about: values[keys.indexOf('about-camper-1')]
         }
     }
     //camper 2
@@ -161,7 +156,10 @@ exports.pay = (req, res/*, next*/) => {
         camper2 = {
             firstName: values[keys.indexOf('fname-camper-2')],
             lastName:  values[keys.indexOf('lname-camper-2')],
-            enrolled: [camp1, camp2, camp3, camp4]
+            enrolled: [camp1, camp2, camp3, camp4],
+            bday: values[keys.indexOf('bday-camper-2')],
+            grade: values[keys.indexOf('grade-camper-2')],
+            about: values[keys.indexOf('about-camper-2')]
         }
     }
     //camper 3
@@ -173,7 +171,10 @@ exports.pay = (req, res/*, next*/) => {
         camper3 = {
             firstName: values[keys.indexOf('fname-camper-3')],
             lastName:  values[keys.indexOf('lname-camper-3')],
-            enrolled: [camp1, camp2, camp3, camp4]
+            enrolled: [camp1, camp2, camp3, camp4],
+            bday: values[keys.indexOf('bday-camper-3')],
+            grade: values[keys.indexOf('grade-camper-3')],
+            about: values[keys.indexOf('about-camper-3')]
         }
     }
     //camper 4
@@ -185,7 +186,10 @@ exports.pay = (req, res/*, next*/) => {
         camper4 = {
             firstName: values[keys.indexOf('fname-camper-4')],
             lastName:  values[keys.indexOf('lname-camper-4')],
-            enrolled: [camp1, camp2, camp3, camp4]
+            enrolled: [camp1, camp2, camp3, camp4],
+            bday: values[keys.indexOf('bday-camper-3')],
+            grade: values[keys.indexOf('grade-camper-3')],
+            about: values[keys.indexOf('about-camper-3')]
         }
     }
 
@@ -240,10 +244,9 @@ exports.pay = (req, res/*, next*/) => {
     //uncomment in production
     //sendToClient(transporter, mailOptions);
 
-    //Send data to artand
-
     //paypal magic
+    //NOT IN THIS VERSION
 
     //final redirect
-    res.redirect('/camps');
+    res.redirect('/confirmation');
 }

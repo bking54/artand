@@ -24,18 +24,14 @@ router.get('/directions', mainController.directions);
 //Register
 router.get('/register', mainController.register);
 
-//Policy Agreement
-router.get('/agreement', mainController.agreement);
-
-//Checkout with Paypal
-router.get('/checkout', mainController.checkout);
-
 //Tutoring Services
 router.get('/tutoring', mainController.tutoring);
 
+//Confirmation Page
+
 //POST Requests
 
-//Register and Pay
+//Register
 //WIP
 router.post('/pay', mainController.pay)
 

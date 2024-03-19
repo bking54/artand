@@ -636,16 +636,6 @@ Policy Styling
 }
 
 /*
-.about-content-box {
-  display: flex;
-  justify-content: center;
-}
-*/
-
-
-/* WIP: camp, checkout, agreement, register */
-
-/*
 Register Styling
 */
 
@@ -668,22 +658,4 @@ Register Styling
   border: 1px solid #000;
   margin-left: clamp(20px, 8vw, 8vw);
   margin-right: clamp(20px, 8vw, 8vw);
-}
-
-/*
-Policy Agreement Styling
-*/
-/* TO BE REMOVED */
-
-#checkout-button {
-  background-color: #faad3f;
-}
-
-/*
-Checkout Styling
-*/
-
-#square-container {
-  display: flex;
-  justify-content: center;
 }
