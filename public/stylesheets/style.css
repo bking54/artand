@@ -103,6 +103,7 @@ Header Styling
   color: hsl(35, 95%, 61%);
 }
 
+/* FIX DIRECTIONS */
 #main-info-container {
   display: flex;
   justify-content: left;
@@ -179,6 +180,7 @@ Header Styling
   padding: 1vh 2vw 1vh 2vw;
   font-size: clamp(28px, 4.5vw, 5vw);
   font-family: 'Roboto';
+  font-weight: 420;
 }
 
 /*
