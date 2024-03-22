@@ -28,11 +28,14 @@ router.get('/register', mainController.register);
 router.get('/tutoring', mainController.tutoring);
 
 //Confirmation Page
+router.get('/confirmation', mainController.confirmation);
+
+//Confirmation error
+router.get('/confirmationerror', mainController.confirmationerror);
 
 //POST Requests
 
 //Register
-//WIP
 router.post('/pay', mainController.pay)
 
 module.exports = router;

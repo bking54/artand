@@ -5,12 +5,14 @@
                 <form action="/pay" method="POST">
                     <div id="household-info">
                         <h2>Household Information</h2>
-                        <h2>Parent/Guardian Information</h2>
-                        <label for="extra-parent">Add A Second Parent/Guardian</label>
-                        <input type="checkbox" id="extra-parent" name="extra-parent" value="Add Another Parent/Guardian">
+                        <h2 class="field-header">Parent/Guardian Information</h2>
+                        <div class="check-container">
+                            <label for="extra-parent">Add A Second Parent/Guardian</label>
+                            <input type="checkbox" id="extra-parent" name="extra-parent" value="Add Another Parent/Guardian">
+                        </div>
                         <input type="hidden" name="has-parent-2" id="has-parent-2" value="false">
                         <div id="parent-1" class="field-container">
-                            <h2>Parent/Guardian 1</h2>
+                            <h2 class="field-subheader">Parent/Guardian 1</h2>
                             <label for="fname-1">First name:</label>
                             <input type="text" id="fname-1" name="fname-1" required>
                             <label for="lname-1">Last name:</label>
@@ -31,7 +33,7 @@
                             <input type="text" id="zip-1" name="zip-1" required>
                         </div>
                         <div id="parent-2" class="field-container">
-                            <h2>Parent/Guardian 2</h2>
+                            <h2 class="field-subheader">Parent/Guardian 2</h2>
                             <label for="fname-2">First name:</label>
                             <input type="text" id="fname-2" name="fname-2" required class="parent-2-fields">
                             <label for="lname-2">Last name:</label>
@@ -51,7 +53,7 @@
                             <label for="zip-2">Zip Code:</label>
                             <input type="text" id="zip-2" name="zip-2" required class="parent-2-fields">
                         </div>
-                        <h2>Local Emergency Contact</h2>
+                        <h2 class="field-header">Local Emergency Contact</h2>
                         <div id="emergency-contact" class="field-container">
                             <label for="fname-ec">First name:</label>
                             <input type="text" id="fname-ec" name="fname-ec" required>
@@ -67,17 +69,23 @@
                             <input type="tel" name="workphone-ec" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                         </div>
                     </div>
-                    <h2>Approved Pick-up List</h2>
-                    <div id="pickup-list" class="field-container">
-                        <input type="button" id="add-pickup" value="Add An Approved Pick-up">
+                    <h2 class="field-header">Approved Pick-up List</h2>
+                    <div class="center-content">
+                        <input type="button" id="add-pickup" class="button" value="Add An Approved Pick-up">
+                    </div>
+                    <input type="hidden" id="has-pickup-1" name="has-pickup-1" value="false">
+                    <input type="hidden" id="has-pickup-2" name="has-pickup-2" value="false">
+                    <input type="hidden" id="has-pickup-3" name="has-pickup-3" value="false">       
+                    <div id="pickup-list">
                         <div id="pickup-1">
-                            <input type="hidden" id="has-pickup-1" name="has-pickup-1" value="false">
+                            <h2 class="field-subheader">Approved Pickup 1</h2>
                             <label for="name-pickup-1">Full Name:</label>
                             <input type="text" id="name-pickup-1" name="name-pickup-1" required class="pickup-1-fields">
                             <label for="relation-pickup-1">Relationship to Child:</label>
                             <input type="text" id="relation-pickup-1" name="relation-pickup-1" required class="pickup-1-fields">
                         </div>
                         <div id="pickup-2">
+                            <h2 class="field-subheader">Approved Pickup 2</h2>
                             <input type="hidden" id="has-pickup-2" name="has-pickup-2" value="false">
                             <label for="name-pickup-2">Full Name:</label>
                             <input type="text" id="name-pickup-2" name="name-pickup-2" required class="pickup-2-fields">
@@ -85,16 +93,16 @@
                             <input type="text" id="relation-pickup-2" name="relation-pickup-2" required class="pickup-2-fields">
                         </div>
                         <div id="pickup-3">
-                            <input type="hidden" id="has-pickup-3" name="has-pickup-3" value="false">
+                            <h2 class="field-subheader">Approved Pickup 3</h2>
                             <label for="name-pickup-3">Full Name:</label>
                             <input type="text" id="name-pickup-3" name="name-pickup-3" required class="pickup-3-fields">
                             <label for="relation-pickup-3">Relationship to Child:</label>
                             <input type="text" id="relation-pickup-3" name="relation-pickup-3" required class="pickup-3-fields">
                         </div>
                     </div>
-                    <h2>Camper Information</h2>
+                    <h2 class="field-header">Camper Information</h2>
                     <div id="num-children" class="field-container">
-                        <h2>How Many Campers Are You Registering?</h2>
+                        <h2 class="field-subheader">How Many Campers Are You Registering?</h2>
                         <label>1</label>
                         <input type="radio" name="num-children" value="1" id="radio-1" required checked>
                         <label>2</label>
@@ -123,15 +131,25 @@
                         <input type="hidden" id="tum-4" name="tum-4" value="false">
                     </div>
                     <div id="camper-1" class="field-container box">
-                        <h2>Camper 1</h2>
-                        <label for="camp1-1">Plus Minus Zero</label>
-                        <input type="checkbox" name="camp1-1" id="camp1-check-1" checked>
-                        <label for="camp2-1">Times Into Fractions</label>
-                        <input type="checkbox" name="camp2-1" id="camp2-check-1">
-                        <label for="camp3-1">Geometry</label>
-                        <input type="checkbox" name="camp3-1" id="camp3-check-1">
-                        <label for="camp4-1">Turbo Multiplication</label>
-                        <input type="checkbox" name="camp4-1" id="camp4-check-1">
+                        <h2 class="field-header" style="grid-column: 1 / 3;">Camper 1</h2>
+                        <div class="checkboxes">
+                            <div class="small-checkbox color1">
+                                <label for="camp1-1" class="checkbox-label">Plus Minus Zero</label>
+                                <input class="checkbox" type="checkbox" name="camp1-1" id="camp1-check-1" checked>
+                            </div>
+                            <div class="small-checkbox color2">
+                                <label for="camp2-1" class="checkbox-label">Times Into Fractions</label>
+                                <input class="checkbox" type="checkbox" name="camp2-1" id="camp2-check-1">
+                            </div>
+                            <div class="small-checkbox color3">
+                                <label for="camp3-1" class="checkbox-label">Geometry</label>
+                                <input class="checkbox" type="checkbox" name="camp3-1" id="camp3-check-1">
+                            </div>
+                            <div class="small-checkbox color4">
+                                <label for="camp4-1" class="checkbox-label">Turbo Multiplication</label>
+                                <input class="checkbox" type="checkbox" name="camp4-1" id="camp4-check-1">
+                            </div>
+                        </div>
                         <label for="fname-camper-1">First name:</label>
                         <input type="text" id="fname-camper-1" name="fname-camper-1" required>
                         <label for="lname-camper-1">Last name:</label>
@@ -149,18 +167,28 @@
                             <option value="6">6th Grade</option>
                         </select>
                         <label for="about-camper-1">About Your Child:</label>
-                        <textarea id="about-camper-1" name="about-camper-1" required></textarea>
+                        <textarea id="about-camper-1" name="about-camper-1"></textarea>
                     </div>
                     <div id="camper-2" class="field-container box">
-                        <h2>Camper 2</h2>
-                        <label for="camp1-2">Plus Minus Zero</label>
-                        <input type="checkbox" name="camp1-2" id="camp1-check-2" checked>
-                        <label for="camp2-2">Times Into Fractions</label>
-                        <input type="checkbox" name="camp2-2" id="camp2-check-2">
-                        <label for="camp3-2">Geometry</label>
-                        <input type="checkbox" name="camp3-2" id="camp3-check-2">
-                        <label for="camp4-2">Turbo Multiplication</label>
-                        <input type="checkbox" name="camp4-2" id="camp4-check-2">
+                        <h2 class="field-header" style="grid-column: 1 / 3;">Camper 2</h2>
+                        <div class="checkboxes">
+                            <div class="small-checkbox color1">
+                                <label for="camp1-2" class="checkbox-label">Plus Minus Zero</label>
+                                <input class="checkbox" type="checkbox" name="camp1-2" id="camp1-check-2" checked>
+                            </div>
+                            <div class="small-checkbox color2">
+                                <label for="camp2-2" class="checkbox-label">Times Into Fractions</label>
+                                <input class="checkbox" type="checkbox" name="camp2-2" id="camp2-check-2">
+                            </div>
+                            <div class="small-checkbox color3">
+                                <label for="camp3-2" class="checkbox-label">Geometry</label>
+                                <input class="checkbox" type="checkbox" name="camp3-2" id="camp3-check-2">
+                            </div>
+                            <div class="small-checkbox color4">
+                                <label for="camp4-2" class="checkbox-label">Turbo Multiplication</label>
+                                <input class="checkbox" type="checkbox" name="camp4-2" id="camp4-check-2">
+                            </div>
+                        </div>
                         <label for="fname-camper-2">First name:</label>
                         <input type="text" id="fname-camper-2" name="fname-camper-2" required class="camper-2-fields">
                         <label for="lname-camper-2">Last name:</label>
@@ -178,18 +206,28 @@
                             <option value="6">6th Grade</option>
                         </select>
                         <label for="about-camper-2">About Your Child:</label>
-                        <textarea id="about-camper-2" name="about-camper-2" required class="camper-2-fields"></textarea>
+                        <textarea id="about-camper-2" name="about-camper-2"></textarea>
                     </div>
                     <div id="camper-3" class="field-container box">
-                        <h2>Camper 3</h2>
-                        <label for="camp1-3">Plus Minus Zero</label>
-                        <input type="checkbox" name="camp1-3" id="camp1-check-3" checked>
-                        <label for="camp2-3">Times Into Fractions</label>
-                        <input type="checkbox" name="camp2-3" id="camp2-check-3">
-                        <label for="camp3-3">Geometry</label>
-                        <input type="checkbox" name="camp3-3" id="camp3-check-3">
-                        <label for="camp4-3">Turbo Multiplication</label>
-                        <input type="checkbox" name="camp4-3" id="camp4-check-3">
+                        <h2 class="field-header" style="grid-column: 1 / 3;">Camper 3</h2>
+                        <div class="checkboxes">
+                            <div class="small-checkbox color1">
+                                <label for="camp1-3" class="checkbox-label">Plus Minus Zero</label>
+                                <input class="checkbox" type="checkbox" name="camp1-3" id="camp1-check-3" checked>
+                            </div>
+                            <div class="small-checkbox color2">
+                                <label for="camp2-3" class="checkbox-label">Times Into Fractions</label>
+                                <input class="checkbox" type="checkbox" name="camp2-3" id="camp2-check-3">
+                            </div>
+                            <div class="small-checkbox color3">
+                                <label for="camp3-3" class="checkbox-label">Geometry</label>
+                                <input class="checkbox" type="checkbox" name="camp3-3" id="camp3-check-3">
+                            </div>
+                            <div class="small-checkbox color4">
+                                <label for="camp4-3" class="checkbox-label">Turbo Multiplication</label>
+                                <input class="checkbox" type="checkbox" name="camp4-3" id="camp4-check-3">
+                            </div>
+                        </div>
                         <label for="fname-camper-3">First name:</label>
                         <input type="text" id="fname-camper-3" name="fname-camper-3" required class="camper-3-fields">
                         <label for="lname-camper-3">Last name:</label>
@@ -207,26 +245,35 @@
                             <option value="6">6th Grade</option>
                         </select>
                         <label for="about-camper-3">About Your Child:</label>
-                        <textarea id="about-camper-3" name="about-camper-3" required class="camper-3-fields"></textarea>
+                        <textarea id="about-camper-3" name="about-camper-3"></textarea>
                     </div>
                     <div id="camper-4" class="field-container box">
-                        <h2>Camper 4</h2>
-                        <label for="camp1-4">Plus Minus Zero</label>
-                        <input type="checkbox" name="camp1-4" id="camp1-check-4" checked>
-                        <label for="camp2-4">Times Into Fractions</label>
-                        <input type="checkbox" name="camp2-4" id="camp2-check-4">
-                        <label for="camp3-4">Geometry</label>
-                        <input type="checkbox" name="camp3-4" id="camp3-check-4">
-                        <label for="camp4-4">Turbo Multiplication</label>
-                        <input type="checkbox" name="camp4-4" id="camp4-check-4">
-                        <label for="fname-camper-4">First name:</label>
+                        <h2 class="field-header" style="grid-column: 1 / 3;">Camper 4</h2>
+                        <div class="checkboxes">
+                            <div class="small-checkbox color1">
+                                <label for="camp1-4" class="checkbox-label">Plus Minus Zero</label>
+                                <input class="checkbox" type="checkbox" name="camp1-4" id="camp1-check-4" checked>
+                            </div>
+                            <div class="small-checkbox color2">
+                                <label for="camp2-4" class="checkbox-label">Times Into Fractions</label>
+                                <input class="checkbox" type="checkbox" name="camp2-4" id="camp2-check-4">
+                            </div>
+                            <div class="small-checkbox color3">
+                                <label for="camp3-4" class="checkbox-label">Geometry</label>
+                                <input class="checkbox" type="checkbox" name="camp3-4" id="camp3-check-4">
+                            </div>
+                            <div class="small-checkbox color4">
+                                <label for="camp4-4" class="checkbox-label">Turbo Multiplication</label>
+                                <input class="checkbox" type="checkbox" name="camp4-4" id="camp4-check-4">
+                            </div>
+                        </div><label for="fname-camper-4">First name:</label>
                         <input type="text" id="fname-camper-4" name="fname-camper-4" required class="camper-4-fields">
                         <label for="lname-camper-4">Last name:</label>
                         <input type="text" id="lname-camper-4" name="lname-camper-4" required class="camper-4-fields">
                         <label for="bday-camper-4">Birth date:</label>
                         <input type="date" id="bday-camper-4" name="bday-camper-4" required class="camper-4-fields">
                         <label for="grade-camper-4">Grade:</label>
-                        <select id="grade-camper-4" name="grade-camper-4" required class="camper-4-fields">
+                        <select id="grade-camper-4" name="grade-camper-4">
                             <option value="K">Kindergarten</option>
                             <option value="1">1st Grade</option>
                             <option value="2">2nd Grade</option>
@@ -238,11 +285,14 @@
                         <label for="about-camper-4">About Your Child:</label>
                         <textarea id="about-camper-4" name="about-camper-4" required class="camper-4-fields"></textarea>
                     </div>
-                    <h2>Policy Agreement</h2>
-                    <label>I have read, and agree to the terms of the Policy Handbook</label>
-                    <input type="checkbox" name="agreement" required>
-                    <h2>Payment</h2>
-                    <button id="agreement-button" class="button" type="submit">Register</button>
+                    <h2 class="field-header">Policy Agreement</h2>
+                    <div class="check-container">
+                        <label>I have read, and agree to the terms of the Policy Handbook</label>
+                        <input type="checkbox" name="agreement" required>
+                    </div>
+                    <div class="center-content">
+                        <button id="agreement-button" class="button" type="submit">Complete Registration</button>
+                    </div>
                 </form>
             </div>
         </div>

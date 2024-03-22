@@ -1,3 +1,4 @@
+const e = require('express');
 const nodemailer = require('nodemailer');
 //require('dotenv').config();
 
@@ -47,6 +48,14 @@ exports.register = (req, res) => {
 
 exports.tutoring = (req, res) => {
     res.render('tutoring');
+}
+
+exports.confirmation = (req, res) => {
+    res.render('confirmation');
+}
+
+exports.confirmationerror = (req, res) => {
+    res.render('confirmationerror');
 }
 
 //POST requests
@@ -198,6 +207,7 @@ exports.pay = (req, res/*, next*/) => {
 
     //format data
     //temp?
+    /*
     let data = {
         parent1: parent1,
         parent2: parent2,
@@ -212,14 +222,152 @@ exports.pay = (req, res/*, next*/) => {
         camper4: camper4,
         agreement: agreement
     }
-
-    console.log(data);
+    */
+    //console.log(data);
 
     //Email Confirmation
-    //create html
-    let clientHTML = '';
+    //Archive Email Construction
+    //parent table
+    let archiveHTML = '<!DOCTYPE html><html> <head> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <style> .true { background-color: #6dff6d } h1, h2, h3, p { font-family: "Roboto"; } h1 { font-weight: 420; margin-top: 20px; } h2 { font-weight: 400; } table { font-family: "Roboto", sans-serif; border-collapse: collapse; width: 100%; border: #000d4e; } td, th { border: 1px solid #000d4e; text-align: left; padding: 8px; } .tables { margin: 4vw; } </style> </head> <body style="margin: 0%; padding: 0%;"> <header style="position: absolute; background-color: #000d4e; height: auto; margin: 0; padding: 0; border-bottom: 0.25vw solid #faad3f; width: 100%;"> <h1 style="color: #fff; text-align: center;">Math Art Connections</h1> <div style="background-color: hsl(230, 40%, 35%);"> <h2 style="color:#fff; text-align: center; margin: 0%; padding: .6vw 0% .6vw 0%;">Registration Information</h2> </div> </header> <div style="position: absolute; min-height: 100vh; top: 25%;"> <div style="padding-bottom: 2.5em;"> <div class="tables"> <div id="parents"> <h3>Parent Information</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Phone Number</th> <th>Email Address</th> <th>Address</th> <th>Apt. Number</th> <th>City</th> <th>State</th> <th>Zip Code</th> </tr> <tr id="parent1">' +
+        '<td>' + parent1.firstName + '</td>' +
+        '<td>' + parent1.lastName + '</td>' + 
+        '<td>' + parent1.phone1 + '</td>' +
+        '<td>' + parent1.email1 + '</td>' +
+        '<td>' + parent1.address1 + '</td>' +
+        '<td>' + parent1.aptNumber + '</td>' +
+        '<td>' + parent1.city + '</td>' +
+        '<td>' + parent1.state + '</td>' +
+        '<td>' + parent1.zipCode + '</td></tr>';
+    if (parent2 != undefined) {
+        archiveHTML += '<tr><td>' + 
+        parent1.firstName + '</td>' +
+        '<td>' + parent2.lastName + '</td>' + 
+        '<td>' + parent2.phone2 + '</td>' +
+        '<td>' + parent2.email2 + '</td>' +
+        '<td>' + parent2.address2 + '</td>' +
+        '<td>' + parent2.aptNumber + '</td>' +
+        '<td>' + parent2.city + '</td>' +
+        '<td>' + parent2.state + '</td>' +
+        '<td>' + parent2.zipCode + '</td></tr>';
+    }
+    //Emergency table
+    archiveHTML += '</table></div><div id="emergency"> <h3>Emergency Contact</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Relationship to Child</th> <th>Cell phone</th> <th>Home phone</th> <th>Work Phone</th> </tr> <tr id="emergency-contact">' +
+    '<td>' + emergencyContact.firstName + '</td>' +
+    '<td>' + emergencyContact.lastName + '</td>' + 
+    '<td>' + emergencyContact.relationship + '</td>' + 
+    '<td>' + emergencyContact.cellphone + '</td>' + 
+    '<td>' + emergencyContact.homephone + '</td>' + 
+    '<td>' + emergencyContact.workphone + '</td></tr></table></div>';
+    //Pickup table
+    if (pickup1 != undefined || pickup2 != undefined || pickup3 != undefined) {
+        archiveHTML += '<div id="pickup"> <h3>Approved Pickup List</h3> <table> <tr> <th>Full Name</th> <th>Relationship to Child</th> </tr>';
+    } else {
+        archiveHTML += '<div id="pickup"><h3>Only Parents And Emergency Contact Approved For Pickup</h3></div>';
+    }
+    if (pickup1 != undefined) {
+        archiveHTML += '<tr>' +
+        '<td>' + pickup1.fullName + '</td>' +
+        '<td>' + pickup1.relationship + '</td></tr>';
+    }
+    if (pickup2 != undefined) {
+        archiveHTML += '<tr>' +
+        '<td>' + pickup2.fullName + '</td>' +
+        '<td>' + pickup2.relationship + '</td></tr>';
+    }
+    if (pickup3 != undefined) {
+        archiveHTML += '<tr>' +
+        '<td>' + pickup3.fullName + '</td>' +
+        '<td>' + pickup3.relationship + '</td></tr>';
+    }
+    if (pickup1 != undefined || pickup2 != undefined || pickup3 != undefined) {
+        archiveHTML += '</table></div>';
+    }
+    //Camper Info Table
+    archiveHTML += '<div id="campers"><h3>Camper Information</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Birthday</th> <th>Grade</th> <th>Important Information</th> </tr>';
+    if (numCampers >= 1) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper1.firstName + '</td>' +
+        '<td>' + camper1.lastName + '</td>' +
+        '<td>' + camper1.bday + '</td>' +
+        '<td>' + camper1.grade + '</td>' +
+        '<td>' + camper1.about + '</td></tr>';
+    }
+    if (numCampers >= 2) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper2.firstName + '</td>' +
+        '<td>' + camper2.lastName + '</td>' +
+        '<td>' + camper2.bday + '</td>' +
+        '<td>' + camper2.grade + '</td>' +
+        '<td>' + camper2.about + '</td></tr>';
+    }
+    if (numCampers >= 3) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper3.firstName + '</td>' +
+        '<td>' + camper3.lastName + '</td>' +
+        '<td>' + camper3.bday + '</td>' +
+        '<td>' + camper3.grade + '</td>' +
+        '<td>' + camper3.about + '</td></tr>';
+    }
+    if (numCampers >= 4) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper4.firstName + '</td>' +
+        '<td>' + camper4.lastName + '</td>' +
+        '<td>' + camper4.bday + '</td>' +
+        '<td>' + camper4.grade + '</td>' +
+        '<td>' + camper4.about + '</td></tr>';
+    }
+    archiveHTML += '</table></div>';
+    //FINALLY the enrollment and billing info
+    archiveHTML += '<div id="enrollment"><h3>Enrollment and Billing</h3><table> <tr> <th>Camper</th> <th>Plus Minus Zero</th> <th>Times Into Fractions</th> <th>Geometry</th> <th>Turbo Multiplication</th> </tr>';
+    if (numCampers >= 1) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper1.firstName + '</td>' +
+        '<td class="' + camper1.enrolled[0] + '">' + camper1.enrolled[0] + '</td>' +
+        '<td class="' + camper1.enrolled[1] + '">' + camper1.enrolled[1] + '</td>' +
+        '<td class="' + camper1.enrolled[2] + '">' + camper1.enrolled[2] + '</td>' +
+        '<td class="' + camper1.enrolled[3] + '">' + camper1.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 2) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper2.firstName + '</td>' +
+        '<td class="' + camper2.enrolled[0] + '">' + camper2.enrolled[0] + '</td>' +
+        '<td class="' + camper2.enrolled[1] + '">' + camper2.enrolled[1] + '</td>' +
+        '<td class="' + camper2.enrolled[2] + '">' + camper2.enrolled[2] + '</td>' +
+        '<td class="' + camper2.enrolled[3] + '">' + camper2.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 3) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper3.firstName + '</td>' +
+        '<td class="' + camper3.enrolled[0] + '">' + camper3.enrolled[0] + '</td>' +
+        '<td class="' + camper3.enrolled[1] + '">' + camper3.enrolled[1] + '</td>' +
+        '<td class="' + camper3.enrolled[2] + '">' + camper3.enrolled[2] + '</td>' +
+        '<td class="' + camper3.enrolled[3] + '">' + camper3.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 4) {
+        archiveHTML += '<tr>' +
+        '<td>' + camper4.firstName + '</td>' +
+        '<td class="' + camper4.enrolled[0] + '">' + camper4.enrolled[0] + '</td>' +
+        '<td class="' + camper4.enrolled[1] + '">' + camper4.enrolled[1] + '</td>' +
+        '<td class="' + camper4.enrolled[2] + '">' + camper4.enrolled[2] + '</td>' +
+        '<td class="' + camper4.enrolled[3] + '">' + camper4.enrolled[3] + '</td></tr>';
+    }
+    //Total bill
+    let total = 0;
+    for (let n = 0; n < 4; n++) {
+        if (camper1 != undefined && camper1.enrolled[n] == true) total += 199;
+        if (camper2 != undefined && camper2.enrolled[n] == true) total += 199;
+        if (camper3 != undefined && camper3.enrolled[n] == true) total += 199;
+        if (camper4 != undefined && camper4.enrolled[n] == true) total += 199;
+    }
+    archiveHTML += '</table> </div><div><h3>Total Amount Owed</h3><p>$' + total + '</p></div>';
+    archiveHTML += ' </div> </div> </div> <footer> </footer> </body></html>';
 
-    let archiveHTML = '<html> <head> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <style> h1, h2, h3, p { font-family: "Roboto"; } h1 { font-weight: 420; } h2 { font-weight: 400; } table { font-family: "Roboto", sans-serif; border-collapse: collapse; width: 100%; border: #000d4e; } td, th { border: 1px solid #000d4e; text-align: left; padding: 8px; } tr:nth-child(odd) { background-color: #ccd2ef; } .tables { margin: 4vw; } </style> </head> <body style="margin: 0%; padding: 0%;"> <header style="position: absolute; background-color: #000d4e; height: auto; margin: 0; padding: 0; border-bottom: 0.25vw solid #faad3f; width: 100%;"> <h1 style="color: #fff; text-align: center;">Math Art Connections</h1> <div style="background-color: hsl(230, 40%, 35%);"> <h2 style="color:#fff; text-align: center; margin: 0%; padding: .6vw 0% .6vw 0%;">Registration Information For </h2> </div> </header> <div style="position: absolute; min-height: 100vh; top: 25%;"> <div style="padding-bottom: 2.5em;"> <div class="tables"> <div id="parents"> <h3>Parent Information</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Phone Number</th> <th>Email Address</th> <th>Address</th> <th>Apt. Number</th> <th>City</th> <th>State</th> <th>Zip Code</th> </tr> <tr id="parent1"> </tr> <tr id="parent2"> </tr> </table> </div> <div id="emergency"> <h3>Emergency Contact</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Relationship to Child</th> <th>Cell phone</th> <th>Home phone</th> <th>Work Phone</th> </tr> <tr id="emergency-contact"> </tr> </table> </div> <div id="pickup"> <h3>Approved Pickup List</h3> <table> <tr> <th>Full Name</th> <th>Relationship to Child</th> </tr> <tr id="pickup1"> </tr> <tr id="pickup2"> </tr> <tr id="pickup3"> </tr> </table> </div> <div id="children"> <h3>Camper Information</h3> <table> <tr> <th>First Name</th> <th>Last Name</th> <th>Birthday</th> <th>Grade</th> <th>Important Information</th> </tr> <tr class="child1"> </tr> <tr class="child2"> </tr> <tr class="child3"> </tr> <tr class="child4"> </tr> </table> </div> <div id="bill"> <h3>Enrollment and Billing Information</h3> <table> <tr> <th>Camper</th> <th>Plus Minus Zero</th> <th>Times Into Fractions</th> <th>Geometry</th> <th>Tubro Multiplication</th> </tr> <tr class="child1"> </tr> <tr class="child2"> </tr> <tr class="child3"> </tr> <tr class="child4"> </tr> </table> </div> </div> </div> </div> <footer> </footer> </body></html>';
+    //create client html
+    let clientHTML = '<!DOCTYPE html><html> <head> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <style> .true { background-color: #6dff6d } h1, h2, h3, p { font-family: "Roboto"; } h1 { font-weight: 420; } h2 { font-weight: 400; } table { font-family: "Roboto", sans-serif; border-collapse: collapse; width: 100%; border: #000d4e; } td, th { border: 1px solid #000d4e; text-align: left; padding: 8px; } .tables { margin: 4vw; } </style> </head> <body style="margin: 0%; padding: 0%;"> <header style="position: absolute; background-color: #000d4e; height: auto; margin: 0; padding: 0; border-bottom: 0.25vw solid #faad3f; width: 100%;"> <h1 style="color: #fff; text-align: center;">Math Art Connections</h1> <div style="background-color: hsl(230, 40%, 35%);"> <h2 style="color:#fff; text-align: center; margin: 0%; padding: .6vw 0% .6vw 0%;">Registration Confirmation</h2> </div> </header> <div style="position: absolute; min-height: 100vh; top: 25%;"> <div style="padding-bottom: 2.5em;">';
+
+    //Insert Client HTML elements here
+
+    clientHTML += '</div></div></body></html>';
 
     //Send to client and business
     let clientMailOptions = {
@@ -229,7 +377,7 @@ exports.pay = (req, res/*, next*/) => {
         },
         to: parent1.email1,
         subject: 'Math Art Connections Registration',
-        text: 'This is just a test'
+        html: clientHTML
     };
 
     let mailOptions = {
@@ -237,16 +385,19 @@ exports.pay = (req, res/*, next*/) => {
             name: 'Artand - Client Archiver',
             address: 'bking5194@gmail.com'
         },
-        to: 'bking5194@gmail.com',
+        to: 'bking5194@gmail.com', //replace with angelas email
         subject: 'New Registration!',
         html: archiveHTML
     };
 
-    const sendToCleint = async (transporter, clientMailOptions) => {
+    let confirmation = true;
+
+    const sendToClient = async (transporter, clientMailOptions) => {
         try {
             await transporter.sendMail(clientMailOptions);
         } catch(err) {
-            console.log('ERROR WITH NODEMAILER');
+            console.log('ERROR WITH CLIENT EMAIL');
+            confirmation = false;
             //next(err);
         }
     };
@@ -255,13 +406,18 @@ exports.pay = (req, res/*, next*/) => {
         try {
             await transporter.sendMail(mailOptions);
         } catch (err) {
-            console.log('ERROR IN NODEMAILER');
+            console.log('ERROR WITH ARCHIVE EMAIL');
+            confirmation = false;
         }
     };
 
     //uncomment in production
-    //sendToClient(transporter, clientMailOptions);
+    sendToClient(transporter, clientMailOptions);
     sendToArchive(transporter, mailOptions);
+
+    if (!confirmation || !agreement) {
+        res.redirect('/confirmationerror');
+    }
 
     //paypal magic
     //NOT IN THIS VERSION
