@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: 'bking5194@gmail.com', //use dotenv
-        pass: 'pjrp chgy hwgd bgrx'
+        user: 'greeneart2@gmail.com', //use dotenv
+        pass: 'kyri iaaq xylx mnlv'
     }
 });
 
@@ -373,7 +373,7 @@ exports.pay = (req, res/*, next*/) => {
     let clientMailOptions = {
         from: {
             name: 'Artand - Math Art Connections',
-            address: 'bking5194@gmail.com'
+            address: 'greeneart2@gmail.com'
         },
         to: parent1.email1,
         subject: 'Math Art Connections Registration',
@@ -383,9 +383,9 @@ exports.pay = (req, res/*, next*/) => {
     let mailOptions = {
         from: {
             name: 'Artand - Client Archiver',
-            address: 'bking5194@gmail.com'
+            address: 'greeneart2@gmail.com'
         },
-        to: 'bking5194@gmail.com', //replace with angelas email
+        to: 'greeneart2@gmail.com',
         subject: 'New Registration!',
         html: archiveHTML
     };
