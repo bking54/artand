@@ -447,8 +447,12 @@ exports.pay = (req, res/*, next*/) => {
     };
 
     //uncomment in production
-    sendToClient(transporter, clientMailOptions);
-    sendToArchive(transporter, mailOptions);
+    if (agreement) {
+        sendToClient(transporter, clientMailOptions);
+        sendToArchive(transporter, mailOptions);
+    } else {
+        confirmation = false;
+    }
 
     if (!confirmation || !agreement) {
         res.redirect('/confirmationerror');

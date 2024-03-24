@@ -720,7 +720,7 @@ Register Styling
   margin-left: clamp(20px, 12vw, 12vw);
   margin-right: clamp(20px, 12vw, 12vw);
   margin-top: 30px;
-  border-radius: 16px;
+  border-radius: 25px;
 }
 
 .check-container {
@@ -744,11 +744,13 @@ Register Styling
   margin-right: clamp(5px, 4vw, 4vw);
   border-top: 0.25vw solid #000d4e;
   padding-top: 16px;
+  margin-bottom: 10px;
 }
 
 .field-subheader {
   grid-column: 1 / 3;
   font-size: clamp(14px, 1.5vw, 1.5vw);
+  margin-bottom: 10px;
 }
 
 .checkbox-label {
