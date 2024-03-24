@@ -365,9 +365,44 @@ exports.pay = (req, res/*, next*/) => {
     //create client html
     let clientHTML = '<!DOCTYPE html><html> <head> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <style> .true { background-color: #6dff6d } h1, h2, h3, p { font-family: "Roboto"; } h1 { font-weight: 420; } h2 { font-weight: 400; } table { font-family: "Roboto", sans-serif; border-collapse: collapse; width: 100%; border: #000d4e; } td, th { border: 1px solid #000d4e; text-align: left; padding: 8px; } .tables { margin: 4vw; } </style> </head> <body style="margin: 0%; padding: 0%;"> <header style="position: absolute; background-color: #000d4e; height: auto; margin: 0; padding: 0; border-bottom: 0.25vw solid #faad3f; width: 100%;"> <h1 style="color: #fff; text-align: center;">Math Art Connections</h1> <div style="background-color: hsl(230, 40%, 35%);"> <h2 style="color:#fff; text-align: center; margin: 0%; padding: .6vw 0% .6vw 0%;">Registration Confirmation</h2> </div> </header> <div style="position: absolute; min-height: 100vh; top: 25%;"> <div style="padding-bottom: 2.5em;">';
 
+    clientHTML += '<div class="thanks"><h2>Thank you for registering for the Art and Math Art Connections Summer Camps!</h2><h2>Before your spot is reserved, follow the payment link provided by 4rtand.com@gmail.com.</h2><h2>We are looking forward to a great summer of math fun!</h2></div>';
     //Insert Client HTML elements here
+    clientHTML += '<div class="open-house"><h3>Open House</h3><p>Family Open House will be held at the Parkwood Association HOA Community Building, 1417 Seaton Road, Durham, NC 27713 on Saturday May 18, 2024 from 10:00 to 11:00 am. You can meet our staff and see examples of the math computations, games we will play, and art we will create during the MAC Summer Mini Camps.</p></div>'
+    clientHTML += '<div id="enrollment"><h3>Enrollment and Billing</h3><h3>Total Amount Owed: $' + total + '</h3><table> <tr> <th>Camper</th> <th>Plus Minus Zero</th> <th>Times Into Fractions</th> <th>Geometry</th> <th>Turbo Multiplication</th> </tr>';
+    if (numCampers >= 1) {
+        clientHTML += '<tr>' +
+        '<td>' + camper1.firstName + '</td>' +
+        '<td class="' + camper1.enrolled[0] + '">' + camper1.enrolled[0] + '</td>' +
+        '<td class="' + camper1.enrolled[1] + '">' + camper1.enrolled[1] + '</td>' +
+        '<td class="' + camper1.enrolled[2] + '">' + camper1.enrolled[2] + '</td>' +
+        '<td class="' + camper1.enrolled[3] + '">' + camper1.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 2) {
+        clientHTML += '<tr>' +
+        '<td>' + camper2.firstName + '</td>' +
+        '<td class="' + camper2.enrolled[0] + '">' + camper2.enrolled[0] + '</td>' +
+        '<td class="' + camper2.enrolled[1] + '">' + camper2.enrolled[1] + '</td>' +
+        '<td class="' + camper2.enrolled[2] + '">' + camper2.enrolled[2] + '</td>' +
+        '<td class="' + camper2.enrolled[3] + '">' + camper2.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 3) {
+        clientHTML += '<tr>' +
+        '<td>' + camper3.firstName + '</td>' +
+        '<td class="' + camper3.enrolled[0] + '">' + camper3.enrolled[0] + '</td>' +
+        '<td class="' + camper3.enrolled[1] + '">' + camper3.enrolled[1] + '</td>' +
+        '<td class="' + camper3.enrolled[2] + '">' + camper3.enrolled[2] + '</td>' +
+        '<td class="' + camper3.enrolled[3] + '">' + camper3.enrolled[3] + '</td></tr>';
+    }
+    if (numCampers >= 4) {
+        clientHTML += '<tr>' +
+        '<td>' + camper4.firstName + '</td>' +
+        '<td class="' + camper4.enrolled[0] + '">' + camper4.enrolled[0] + '</td>' +
+        '<td class="' + camper4.enrolled[1] + '">' + camper4.enrolled[1] + '</td>' +
+        '<td class="' + camper4.enrolled[2] + '">' + camper4.enrolled[2] + '</td>' +
+        '<td class="' + camper4.enrolled[3] + '">' + camper4.enrolled[3] + '</td></tr>';
+    }
 
-    clientHTML += '</div></div></body></html>';
+    clientHTML += '</table></div></div></div></body></html>';
 
     //Send to client and business
     let clientMailOptions = {
@@ -413,7 +448,7 @@ exports.pay = (req, res/*, next*/) => {
 
     //uncomment in production
     sendToClient(transporter, clientMailOptions);
-    sendToArchive(transporter, mailOptions);
+    //sendToArchive(transporter, mailOptions);
 
     if (!confirmation || !agreement) {
         res.redirect('/confirmationerror');

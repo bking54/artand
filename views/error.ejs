@@ -1,9 +1,18 @@
 <%- include('./partials/header.ejs')%>
     <div class="main-container">
         <div class="content-wrap">
-            <h1><%= message %></h1>
-            <h2><%= error.status %></h2>
-            <pre><%= error.stack %></pre>
+            <h2><%= message %></h2>
+            <h2><%= error.status + " Error" %></h2>
+            <!--<pre><%= error.stack %></pre>-->
+            <div class="center-content">
+                <div>
+                    <a class="button" id="home-button" href="/home">
+                        <div>
+                            <p class="home-button-text">Return To Home Page</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 <%- include('./partials/footer.ejs')%>
